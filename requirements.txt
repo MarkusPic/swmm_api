@@ -1,0 +1,20 @@
+# REQUIRED
+numpy
+pandas
+tqdm
+
+# for OPTIONAL functionality
+networkx  # analyse network (some marcos i.e. splitting the network at a give node)
+fastparquet  # write out-file timeseries as parquet file
+matplotlib  # plot the sewer-network, longitudinal section or timeseries
+Shapely  # handle GIS data
+pyproj  # handle GIS data
+Rtree  # handle GIS data
+geopandas  # handle GIS data
+fiona  # read and write to GIS database
+SWMM_xsections_shape_generator  # analyse cross-section information
+pyswmm  # run swmm with progress bar (tqdm)
+swmm-toolkit  # run swmm
+cchardet  # get inp-file encoding
+
+scikit-learn

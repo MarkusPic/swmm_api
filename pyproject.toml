@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "swmm-api"
+description = "US-EPA-SWMM python interface"
+readme = "README.md"
+authors = [
+    { name = "Markus Pichler", email = "markus.pichler@tugraz.at" }
+]
+requires-python = ">=3.7"
+keywords = ["swmm", "environment", "civil_engineering", "api"]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Hydrology",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "tqdm"
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = { attr = "swmm_api.__version__" }
+
+[project.optional-dependencies]
+macros = ["networkx", "fastparquet", "matplotlib", "SWMM_xsections_shape_generator", "pyswmm"]
+gis = ["Shapely", "pyproj", "Rtree", "geopandas"]
+full = ["networkx", "fastparquet", "matplotlib", "SWMM_xsections_shape_generator", "Shapely", "pyproj", "Rtree", "geopandas", "pyswmm"]
+docs = ["networkx", "fastparquet", "matplotlib", "Shapely", "pyproj", "Rtree", "geopandas", "SWMM_xsections_shape_generator",
+        "sphinx", "nbsphinx", "recommonmark", "pydata_sphinx_theme"]
+
+[project.urls]
+Documentation = "https://markuspichler.gitlab.io/swmm_api"
+Changelog = "https://gitlab.com/markuspichler/swmm_api/-/blob/master/CHANGELOG.md"
+homepage = "https://gitlab.com/markuspichler/swmm_api"
+
+[tool.setuptools.packages.find]
+exclude = ['joss_paper*', 'docker_website*', 'documentation*', 'examples*']
+namespaces = false
+
+
+# https://github.com/python-semantic-release/python-semantic-release
+[tool.semantic_release]
+version_variable = 'swmm_api/__init__.py:__version__' # "setup.py:__version__" #
+upload_to_pypi = true
+hvcs = 'gitlab'
+branch = 'main'
+major_on_zero = false
+version_source = 'commit' # 'tag' 'tag_only' commit
+commit_subject = 'New version v{version} 🔥'
