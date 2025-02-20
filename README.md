@@ -238,7 +238,7 @@ inp_new.write_file('new_inputfile.inp')
 
 For example the default GIS export looks in QGIS like this:
 
-![QGIS screenshot of Bellinge export](/documentation/images/gis_export_bellinge.png)
+![QGIS screenshot of Bellinge export](/gis_export_bellinge_simple_light.png)
 
 ## Be Aware! ⚠️
 
