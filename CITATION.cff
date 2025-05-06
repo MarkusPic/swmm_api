@@ -5,8 +5,15 @@ authors:
   given-names: "Markus"
   orcid: "https://orcid.org/0000-0002-8101-2163 "
 
-title: "swmm_api: API for reading, manipulating and running SWMM-Projects"
+title: "swmm_api: A Python Package for Automation, Customization, and Visualization in SWMM-Based Urban Drainage Modeling"
 version: 0.3
-doi: 10.5281/zenodo.7054804
-date-released: 2022-09-06
-url: "https://gitlab.com/markuspichler/swmm_api"
+doi: 10.3390/w17091373
+date-released: 2025-05-01
+url: "https://www.mdpi.com/2073-4441/17/9/1373"
+issn: 2073-4441
+issue: 9
+journal: Water
+languages: 
+  - en
+pages: 1373
+volume: 17
