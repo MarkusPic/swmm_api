@@ -1,4 +1,4 @@
-© [Institute of Urban Water Management and Landscape Water Engineering](https://www.sww.tugraz.at), [Graz University of Technology](https://www.tugraz.at/home/) and [Markus Pichler](mailto:markus.pichler@tugraz.at)
+[Institute of Urban Water Management and Landscape Water Engineering](https://www.sww.tugraz.at), [Graz University of Technology](https://www.tugraz.at/home/) and [Markus Pichler](mailto:markus.pichler@tugraz.at)
 
 # THIS IS A SNAPSHOT OF THE ORIGINAL README
 
@@ -10,9 +10,9 @@ Go to [GitLab](https://gitlab.com/markuspichler/swmm_api) to see the full source
 [![pipeline status](https://gitlab.com/markuspichler/swmm_api/badges/main/pipeline.svg)](https://gitlab.com/markuspichler/swmm_api/-/commits/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![docs](https://img.shields.io/static/v1.svg?label=&message=documentation&color=blue&logo=readthedocs&logoColor=white)](https://markuspichler.gitlab.io/swmm_api)
-[![DOI](https://img.shields.io/badge/doi-10.5281/zenodo.5862140-white?logo=doi)](https://zenodo.org/doi/10.5281/zenodo.5862140)
+[![DOI](https://img.shields.io/badge/10.3390/w17091373-white?logo=doi)](https://doi.org/10.3390/w17091373)
 [![Latest Release](https://gitlab.com/markuspichler/swmm_api/-/badges/release.svg)](https://gitlab.com/markuspichler/swmm_api/-/releases)
-[![Matrix](https://img.shields.io/matrix/swmm-api-python%3Amatrix.org?style=flat&logo=matrix)](https://matrix.to/#/#swmm-api-python:matrix.org)
+[![Matrix](https://img.shields.io/matrix/swmm_api_python%3Amatrix.org?style=flat&logo=matrix)](https://matrix.to/#/#swmm_api_python:matrix.org)
 [![Buymeacoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label=donate)](https://www.buymeacoffee.com/MarkusP)
 
 [![PyPI - Downloads](https://img.shields.io/pypi/dd/swmm-api)](https://pypi.python.org/pypi/swmm-api)
@@ -21,20 +21,25 @@ Go to [GitLab](https://gitlab.com/markuspichler/swmm_api) to see the full source
 
 
 With this package you can:
-- read, manipulate and write INP-files.
-- start SWMM within this python package.
-- read the RPT- and OUT-files as a pandas DataFrame for further analysis.
-- export the model to GIS for spatioal data analysis.
+- read, manipulate and write [INP-files](https://markuspichler.gitlab.io/swmm_api/examples/inp_file_reader.html).
+  - many macros can be found for analysing and manipulating the input data in the package under [`swmm_api.input_file.macros`](https://markuspichler.gitlab.io/swmm_api/api_reference/inp/macros.html)
+- start a SWMM simulation within this python package.
+- read the [report](https://markuspichler.gitlab.io/swmm_api/examples/rpt_file_reader.html) (.rpt) and [output](https://markuspichler.gitlab.io/swmm_api/examples/out_file_reader.html) (.out) files as a `pandas.DataFrame` for further analysis.
+- export the model to GIS for spatial data analysis (import function also available, but must be adopted depending on the used GIS files).
 
 This package is based on the command line SWMM syntax. ([see Appendix D in the SWMM User Manual 5.2](https://www.epa.gov/system/files/documents/2022-04/swmm-users-manual-version-5.2.pdf))
 
+💡 The Technical Note in Water (MDPI) is published 💡
+
+> Pichler, M. (2025). swmm_api: A Python Package for Automation, Customization, and Visualization in SWMM-Based Urban Drainage Modeling. Water, 17(9), 1373. <https://doi.org/10.3390/w17091373> 
+
 ## Introduction
 
-The swmm-api package is a powerful tool for modellers and researchers who use the Storm Water Management Model (SWMM). This software enables the manipulation and analysis of SWMM models, both in terms of the input data and the simulation results. The package is written in Python, making it an attractive option for those who use this language for data management and advanced analysis.
+The `swmm_api` package is a powerful tool for modellers and researchers who use the Storm Water Management Model (SWMM). This software enables the manipulation and analysis of SWMM models, both in terms of the input data and the simulation results. The package is written in Python, making it an attractive option for those who use this language for data management and advanced analysis.
 
-One of the key features of swmm-api is its ability to read and write SWMM import-files (.inp), allowing the user to manipulate the model structure and input data. The package also has the capability to run the SWMM model within the Python environment, providing users with quick access to simulation results. Furthermore, swmm-api can read both the report (.rpt) and binary output-files (.out), presenting the results as a Pandas DataFrame for easy analysis. The ability to read binary hotstart-files (.hst) is also included, which enables the acceleration of simulation time by using initial values stored in the file.
+One of the key features of `swmm_api` is its ability to read and write SWMM import-files (.inp), allowing the user to manipulate the model structure and input data. The package also has the capability to run the SWMM model within the Python environment, providing users with quick access to simulation results. Furthermore, swmm-api can read both the report (.rpt) and binary output-files (.out), presenting the results as a Pandas DataFrame for easy analysis. The ability to read binary hotstart-files (.hst) is also included, which enables the acceleration of simulation time by using initial values stored in the file.
 
-The swmm-api package is designed to be flexible and user-friendly, with an object-oriented structure that is lightweight and fast. The package is based on the SWMM command line syntax, making it easy to use for those familiar with this model. Additionally, swmm-api has the ability to interact with GIS data, making it a valuable tool for modellers working with spatial data.
+The `swmm_api` package is designed to be flexible and user-friendly, with an object-oriented structure that is lightweight and fast. The package is based on the SWMM command line syntax, making it easy to use for those familiar with this model. Additionally, swmm-api has the ability to interact with GIS data, making it a valuable tool for modellers working with spatial data.
 
 ## Installation
 
@@ -236,9 +241,9 @@ inp_new = gpkg_to_swmm('geopackage.gpkg', label_sep='.')
 inp_new.write_file('new_inputfile.inp')
 ```
 
-For example the default GIS export looks in QGIS like this:
+For example the default GIS export as a geo-package (with included styles) looks in QGIS like this:
 
-![QGIS screenshot of Bellinge export](/gis_export_bellinge_simple_light.png)
+![QGIS screenshot of Bellinge export](/documentation/images/gis_export_bellinge_simple_light.png)
 
 ## Be Aware! ⚠️
 
@@ -287,25 +292,34 @@ MORE INFORMATION COMING SOON
 
 ## Cite as
 
-> *Pichler, Markus. (2022). swmm_api: API for reading, manipulating and running SWMM-Projects with python (0.3). Zenodo. https://doi.org/10.5281/zenodo.7054804*
+> Pichler, M. (2025). swmm_api: A Python Package for Automation, Customization, and Visualization in SWMM-Based Urban Drainage Modeling. Water, 17(9), 1373. <https://doi.org/10.3390/w17091373>
 
-## Publications using or mentioning swmm-api 📚
+## Publications using or mentioning `swmm_api` 📚
+
+### 2022
 
 1. Baumann, H., Ravn, N. H., & Schaum, A. (2022). Efficient hydrodynamic modelling of urban stormwater systems for real-time applications. *Modelling, 3(4)*, 464–480. <https://doi.org/10.3390/modelling3040030>
 2. Farina, A., Di Nardo, A., Gargano, R., & Greco, R. (2022). Assessing the environmental impact of combined sewer overflows through a parametric study. *EWaS5*, 8. <https://doi.org/10.3390/environsciproc2022021008>
 3. Schilling, J., & Tränckner, J. (2022). Generate_swmm_inp: An open-source qgis plugin to import and export model input files for swmm. *Water, 14(14)*, 2262. <https://doi.org/10.3390/w14142262>
 4. Wicki, T. (2022). Effekt der Einzugsgebietsmodellierung auf die Abflusssimulation im urbanen Gebiet. Master thesis. Paris Lodron-Universität Salzburg. <https://unigis.at/files/Mastertheses/Full/106726.pdf>
-5. Zhang, Z., Tian, W., & Liao, Z. (2023). Towards coordinated and robust real-time control: A decentralized approach for combined sewer overflow and urban flooding reduction based on multi-agent reinforcement learning. *Water Research, 229*, 119498. <https://doi.org/10.1016/j.watres.2022.119498>
-6. van der Werf, J. A., Kapelan Z., Langeveld, J. G. (2023). Predictive heuristic control: inferring risks from heterogeneous nowcast accuracy. *Water Sci Technol* 2023; 87 (4): 1009–1028. <https://doi.org/10.2166/wst.2023.027>
-7. Farina, A., Di Nardo, A., Gargano, R., Van Der Werf, J. A., & Greco, R. (2023). A simplified approach for the hydrological simulation of urban drainage systems with SWMM. Journal of Hydrology, 623, 129757. <https://doi.org/10.1016/j.jhydrol.2023.129757>
-8. Ryrfors Wien, C. (2023). Nature-based solution retrofit in an urban catchment for CSO reduction (Master's thesis, NTNU). <https://hdl.handle.net/11250/3108487>
-9. Van Der Werf, J. A., Kapelan, Z., & Langeveld, J. G. (2023). Happy to control: A heuristic and predictive policy to control large urban drainage systems. Water Resources Research, 59(8), e2022WR033854. <https://doi.org/10.1029/2022WR033854>
-10. Pritsis, S., Pons, V., Rokstad, M. M., Clemens-Meyer, F. H. L. R., Kleidorfer, M., & Tscheikner-Gratl, F. (2024). The role of hyetograph shape and designer subjectivity in the design of an urban drainage system. Water Science & Technology, 90(3), 920–934. <https://doi.org/10.2166/wst.2024.261>
+
+### 2023
+
+5. Farina, A., Di Nardo, A., Gargano, R., Van Der Werf, J. A., & Greco, R. (2023). A simplified approach for the hydrological simulation of urban drainage systems with SWMM. Journal of Hydrology, 623, 129757. <https://doi.org/10.1016/j.jhydrol.2023.129757>
+6. Ryrfors Wien, C. (2023). Nature-based solution retrofit in an urban catchment for CSO reduction (Master's thesis, NTNU). <https://hdl.handle.net/11250/3108487>
+7. van der Werf, J. A., Kapelan Z., Langeveld, J. G. (2023). Predictive heuristic control: inferring risks from heterogeneous nowcast accuracy. *Water Sci Technol* 2023; 87 (4): 1009–1028. <https://doi.org/10.2166/wst.2023.027>
+8. Van Der Werf, J. A., Kapelan, Z., & Langeveld, J. G. (2023). Happy to control: A heuristic and predictive policy to control large urban drainage systems. Water Resources Research, 59(8), <https://doi.org/10.1029/2022WR033854>
+9. Zhang, Z., Tian, W., & Liao, Z. (2023). Towards coordinated and robust real-time control: A decentralized approach for combined sewer overflow and urban flooding reduction based on multi-agent reinforcement learning. *Water Research, 229*, 119498. <https://doi.org/10.1016/j.watres.2022.119498>
+
+### 2024
+
+10. Farina, A., Gargano, R., & Greco, R. (2024). Effects of urban catchment characteristics on combined sewer overflows. Environmental Research, 244, 117945. <https://doi.org/10.1016/j.envres.2023.117945>
 11. Pichler, M., König, A. W., Reinstaller, S., & Muschalla, D. (2024). Fully automated simplification of urban drainage models on a city scale. Water Science & Technology. <https://doi.org/10.2166/wst.2024.337>
-12. Zhang, Z., Tian, W., Lu, C., Liao, Z., & Yuan, Z. (2024). Graph neural network-based surrogate modelling for real-time hydraulic prediction of urban drainage networks. Water Research, 263, 122142. <https://doi.org/10.1016/j.watres.2024.122142>
+12. Pritsis, S., Pons, V., Rokstad, M. M., Clemens-Meyer, F. H. L. R., Kleidorfer, M., & Tscheikner-Gratl, F. (2024). The role of hyetograph shape and designer subjectivity in the design of an urban drainage system. Water Science & Technology, 90(3), 920–934. <https://doi.org/10.2166/wst.2024.261>
+13. Zhang, Z., Tian, W., Lu, C., Liao, Z., & Yuan, Z. (2024). Graph neural network-based surrogate modelling for real-time hydraulic prediction of urban drainage networks. Water Research, 263, 122142. <https://doi.org/10.1016/j.watres.2024.122142>
+14. Karki, Namrata (2024) Comparison between single and multi-objective strategies for urban drainage model optimization using genetic algorithms: a case study of Badalona urban drainage network, Master's thesis, TU Dresden, <http://hdl.handle.net/2117/415350>
 
-
-## Packages or repositories using swmm-api (on GitHub)
+## Packages or repositories using `swmm_api` (on GitHub)
 
 [MarkusPic / swmm-model-simplification](https://github.com/MarkusPic/swmm-model-simplification)
 
