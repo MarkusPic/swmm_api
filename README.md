@@ -1,5 +1,7 @@
 [Institute of Urban Water Management and Landscape Water Engineering](https://www.sww.tugraz.at), [Graz University of Technology](https://www.tugraz.at/home/) and [Markus Pichler](mailto:markus.pichler@tugraz.at)
 
+<img src="https://markuspichler.gitlab.io/swmm_api/_static/swmm_api_logo.svg" alt="logo" width="300" height="200">
+
 # THIS IS A SNAPSHOT OF THE ORIGINAL README
 
 Go to [GitLab](https://gitlab.com/markuspichler/swmm_api) to see the full source.
