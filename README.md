@@ -34,7 +34,7 @@ This package is based on the command line SWMM syntax. ([see Appendix D in the S
 **The package is published as Technical Note in Water (MDPI). Please cite as:**
 
 > Pichler, M. (2025). swmm_api: A Python Package for Automation, Customization, and Visualization in SWMM-Based Urban Drainage Modeling. Water, 17(9), 1373. <https://doi.org/10.3390/w17091373> 
-> ![Graphical abstract](https://mdpi-res.com/water/water-17-01373/article_deploy/html/images/water-17-01373-ag.png)
+> [![Graphical abstract](https://mdpi-res.com/water/water-17-01373/article_deploy/html/images/water-17-01373-ag.png)](https://doi.org/10.3390/w17091373)
 
 ## Introduction
 
